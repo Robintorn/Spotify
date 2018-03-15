@@ -11,7 +11,6 @@ function handleErrors(response) {
 
 document.getElementById("search-start").addEventListener("click", function(){
     fetch('https://api.spotify.com/v1/search?q='+searchq.value+'&type='+option.value+'&market=US',{
-        
         method: 'GET',
         headers: new Headers({
             "Authorization": AUTH_TOKEN,
