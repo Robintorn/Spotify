@@ -1,15 +1,14 @@
 document.getElementById("search-start").addEventListener("click", function(){
 
-    fetch("https://api.spotify.com/v1/search?q=Muse&type=track,artist&market",{
+    fetch("https://api.spotify.com/v1/search?q=Muse&type=track,artist&market=US",{
+        
         method: 'GET',
         headers: new Headers({
-            "GET": "/v1/search?q=Muse&type=track,artist&market=US HTTP/1.1",
-            "Host": "api.spotify.com",
             "Accept": "application/json",
-            "Content-Type": "application/json",
-            "Accept-Encoding": "gzip, deflate, compress",
-            "Authorization": AUTH_TOKEN,
-            "User-Agent": "Spotify API Console v0.1"
+            "Authorization": " Bearer BQCKR5CQKyhKwi3MckGjwjPZP9jIxQPqYXQwC2xtgZmlF6gs72QzyBjUam7goLXhCnCIX8k6KrcLfNJPvF6GoFTxljqw_afK2PzdvMdcMDk7bKylh3K9Y9E1QirTTo5n-C86W5ZNm5jVRX4Qje0",
         })
     })
+    .then(response => response.json())
+    .then(spotify => console.log(spotify))
+    .catch(err => console.log(err));
 })
