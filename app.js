@@ -38,7 +38,6 @@ function DOM(data){
         p.innerHTML = data.tracks.items[i].name;
         link.setAttribute("href", data.tracks.items[i].uri);
         link.innerHTML = "Länk till spotify";
-        img.setAttribute("src", IMAGE_NA_URL); 
         img.setAttribute("src", data.tracks.items[i].album.images[0].url);
     }
 }
@@ -63,7 +62,6 @@ if(option.value === "artist"){
         p.innerHTML = data.artists.items[i].name;
         link.setAttribute("href", data.artists.items[i].uri);
         link.innerHTML = "Länk till spotify";
-        img.setAttribute("src", IMAGE_NA_URL); 
         img.setAttribute("src", data.artists.items[i].images[0].url);
     }
 }
