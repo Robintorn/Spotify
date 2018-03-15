@@ -70,7 +70,7 @@ if(option.value === "artist"){
         p.innerHTML = data.artists.items[i].name;
         link.setAttribute("href", data.artists.items[i].uri);
         link.innerHTML = "Länk till spotify";
-        img.setAttribute("src", IMAGE_NA_URL);
+        img.setAttribute("src", data.artists.items[i].images[0].url);
     }
 }
     console.log(data);
