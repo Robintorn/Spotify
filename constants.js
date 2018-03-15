@@ -5,4 +5,4 @@ const API_URL       = 'https://api.spotify.com/v1/search?q=';
 const IMAGE_NA_URL  = 'http://www.hellcat.org/attachments/image-not-available-jpg.289129/';
 
 // your OAuth token. NOTE: Expires after 1h!.
-const AUTH_TOKEN    = 'Bearer BQAdV6fLCPBsuZH-5w6xDRgY5_qk60BgFaVeX4obwb0MIPLj2U6U3Qbsk37kfiiYqXB_Z8AzpCyyMWI3WjgLPpQE5ZaBa8vUXMB7X7RnIkKyh3LfjPlcTYAXwulqo_TX5ANXxiH4rshshpUFuEU';
+const AUTH_TOKEN    = 'Bearer BQA1XM0gFFmB-M1KvqYOBJNr6fA7RqdDXsr3f1n8yvEyJv2rCZLCw0edaXEeyVl9rDDyCAImbAYRdUyM5vfuz_eY-BXkXRASHWM8ZbUxItxpVLMgMj1SRPiuAQlK9_6e2z08FfVi-2vaFyaGNVI';

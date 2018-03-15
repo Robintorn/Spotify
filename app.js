@@ -1,18 +1,27 @@
+let masterdiv = document.getElementById("search-results-container")
 let option = document.getElementById("search-type");
 let searchq = document.getElementById("search-text");
+
+function handleErrors(response) {
+    if (!response.ok) {
+        throw Error(response.statusText);
+    }
+    return response;
+}
 
 document.getElementById("search-start").addEventListener("click", function(){
     fetch('https://api.spotify.com/v1/search?q='+searchq.value+'&type='+option.value+'&market=US',{
         
         method: 'GET',
         headers: new Headers({
-            "Accept": "application/json",
             "Authorization": AUTH_TOKEN,
+            "Accept": "application/json",
         })
     })
+    .then(handleErrors)
     .then(response => response.json())
     .then(data => DOM(data))
-    .catch(err => console.log(err));
+    .catch(err => masterdiv.innerHTML = err);
 })
 
 
@@ -38,7 +47,7 @@ function DOM(data){
         p.innerHTML = data.tracks.items[i].name;
         link.setAttribute("href", data.tracks.items[i].uri);
         link.innerHTML = "Länk till spotify";
-        img.setAttribute("src", data.tracks.items[i].album.images[0].url);
+        img.setAttribute("src", IMAGE_NA_URL);
     }
 }
 if(option.value === "artist"){
@@ -62,7 +71,7 @@ if(option.value === "artist"){
         p.innerHTML = data.artists.items[i].name;
         link.setAttribute("href", data.artists.items[i].uri);
         link.innerHTML = "Länk till spotify";
-        img.setAttribute("src", data.artists.items[i].images[0].url);
+        img.setAttribute("src", IMAGE_NA_URL);
     }
 }
     console.log(data);
