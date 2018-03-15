@@ -5,7 +5,7 @@ document.getElementById("search-start").addEventListener("click", function(){
         method: 'GET',
         headers: new Headers({
             "Accept": "application/json",
-            "Authorization": " Bearer BQCKR5CQKyhKwi3MckGjwjPZP9jIxQPqYXQwC2xtgZmlF6gs72QzyBjUam7goLXhCnCIX8k6KrcLfNJPvF6GoFTxljqw_afK2PzdvMdcMDk7bKylh3K9Y9E1QirTTo5n-C86W5ZNm5jVRX4Qje0",
+            "Authorization": AUTH_TOKEN,
         })
     })
     .then(response => response.json())
