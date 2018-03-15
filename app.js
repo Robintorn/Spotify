@@ -17,6 +17,7 @@ document.getElementById("search-start").addEventListener("click", function(){
 
 
 function DOM(data){
+    if(option.value === "track"){
     for(let i in data.tracks.items){
         let create = document.getElementById("search-results");
         let div1 = document.createElement("div");
@@ -39,5 +40,6 @@ function DOM(data){
         link.innerHTML = "Länk till spotify";
         img.setAttribute("src", data.tracks.items[i].album.images[0].url);
     }
+}
     console.log(data);
 }
