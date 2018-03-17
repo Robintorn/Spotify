@@ -41,28 +41,19 @@ function DOM(data){
     document.getElementById("search-results").innerHTML = renderhtml;
 }
 if(option.value === "artist"){
+    let renderhtml = '';
     for(let i in data.artists.items){
-        let create = document.getElementById("search-results");
-        let div1 = document.createElement("div");
-        let div2 = document.createElement("div");
-        let p = document.createElement("p");
-        let link = document.createElement("a");
-        let img = document.createElement("img");
-
-        create.appendChild(div1);
-        div1.appendChild(div2);
-        div1.appendChild(img);
-        div2.appendChild(p);
-        div2.appendChild(link);
-
-        div1.setAttribute("class", "search-result");
-        div2.setAttribute("class", "search-result-info");
-
-        p.innerHTML = data.artists.items[i].name;
-        link.setAttribute("href", data.artists.items[i].uri);
-        link.innerHTML = "Länk till spotify";
-        img.setAttribute("src", data.artists.items[i].images[0].url);
+        renderhtml += `
+         <div class="search-result">
+        <div class="search-result-info">
+            <p>${data.artists.items[i].name}</p>
+            <a href="${data.artists.items[i].uri}">Open in Spotify</a>
+        </div>
+        <img src="${data.artists.items[i].images[0].url}">
+    </div> 
+        `
     }
+    document.getElementById("search-results").innerHTML = renderhtml;
 }
     console.log(data);
 }
